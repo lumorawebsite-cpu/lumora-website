@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lumora — Premium Websites for Landscaping Businesses</title>
+<meta name="description" content="Lumora builds premium websites, lead capture, automation and SEO for ambitious UK landscaping businesses. Book a free strategy call." />
+<meta name="theme-color" content="#0a0a0b" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Lumora — Premium Websites for Landscaping Businesses" />
+<meta property="og:description" content="Websites that turn visitors into booked jobs. Design, lead capture, automation and SEO — built to grow UK landscaping businesses." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:        #0a0a0b;
+    --bg-2:      #0e0e10;
+    --bg-3:      #111114;
+    --panel:     #131316;
+    --line:      rgba(201,162,75,0.16);
+    --line-soft: rgba(255,255,255,0.07);
+    --text:      #f4f1ea;
+    --muted:     #a7a399;
+    --muted-2:   #6f6c64;
+    --gold:      #c9a24b;
+    --gold-2:    #e6c878;
+    --gold-deep: #9c7c34;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans:  "Inter", system-ui, -apple-system, sans-serif;
+    --maxw: 1200px;
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  html, body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    font-weight:300;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--gold);color:#0a0a0b}
+
+  /* Scrollbar */
+  ::-webkit-scrollbar{width:10px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:#26241f;border-radius:8px}
+  ::-webkit-scrollbar-thumb:hover{background:var(--gold-deep)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;width:100%}
+
+  /* ---------- Typography ---------- */
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-0.01em}
+  .eyebrow{
+    font-family:var(--sans);font-weight:500;font-size:.74rem;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
+    display:inline-flex;align-items:center;gap:.7rem;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.7}
+  .section-title{font-size:clamp(2rem,5vw,3.4rem);margin:.6rem 0 1rem}
+  .section-intro{color:var(--muted);max-width:560px;font-size:1.02rem}
+  .gold{color:var(--gold)}
+  .italic{font-style:italic}
+
+  section{position:relative}
+  .section-pad{padding:clamp(80px,11vw,150px) 0}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    --pad:16px 30px;
+    display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+    font-family:var(--sans);font-weight:500;font-size:.92rem;letter-spacing:.02em;
+    padding:var(--pad);border-radius:2px;cursor:pointer;border:1px solid transparent;
+    position:relative;overflow:hidden;transition:transform .35s var(--ease),box-shadow .4s var(--ease),color .35s,background .35s;
+    white-space:nowrap;
+  }
+  .btn-gold{
+    background:var(--gold);color:#0a0a0b;font-weight:600;
+    box-shadow:0 8px 30px rgba(201,162,75,.18);
+  }
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(201,162,75,.34);background:var(--gold-2)}
+  .btn-gold .arrow{transition:transform .35s var(--ease)}
+  .btn-gold:hover .arrow{transform:translateX(4px)}
+  .btn-ghost{
+    background:transparent;color:var(--text);border:1px solid var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+  .btn-lg{--pad:20px 40px;font-size:1rem}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .4s var(--ease),border-color .4s,backdrop-filter .4s,padding .4s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:22px;padding-bottom:22px;transition:padding .4s var(--ease)}
+  header.nav.scrolled{
+    background:rgba(10,10,11,.82);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--line-soft);
+  }
+  header.nav.scrolled .wrap{padding-top:14px;padding-bottom:14px}
+  .logo{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:.02em}
+  .logo .mark{
+    width:34px;height:34px;border-radius:50%;flex:none;
+    border:1px solid var(--gold);display:grid;place-items:center;position:relative;
+  }
+  .logo .mark::after{content:"";width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px 2px rgba(201,162,75,.7)}
+  .logo span{color:var(--text)}
+  .logo b{color:var(--gold);font-weight:600}
+  .nav-links{display:flex;align-items:center;gap:34px;list-style:none}
+  .nav-links a{font-size:.9rem;color:var(--muted);font-weight:400;transition:color .3s;position:relative}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
+  .nav-links a:hover{color:var(--text)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:18px}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+  .burger span{width:24px;height:2px;background:var(--text);transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:120px;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .hero-grid{position:absolute;inset:0;opacity:.5;
+    background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 30%,transparent 75%);
+    mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 30%,transparent 75%);
+  }
+  .hero-orb{position:absolute;width:520px;height:520px;border-radius:50%;border:1px solid var(--line);top:50%;left:50%;transform:translate(-50%,-50%);opacity:.5}
+  .hero-orb.two{width:760px;height:760px;opacity:.28}
+  .hero-orb.three{width:1040px;height:1040px;opacity:.14}
+  .hero .wrap{position:relative;z-index:2;text-align:center}
+  .hero-eyebrow{margin-bottom:30px;justify-content:center}
+  .hero h1{
+    font-size:clamp(2.7rem,7.4vw,6rem);font-weight:500;line-height:1.02;letter-spacing:-0.02em;
+    margin:0 auto;max-width:14ch;
+  }
+  .hero h1 .line{display:block;overflow:hidden}
+  .hero h1 .line > span{display:inline-block;will-change:transform}
+  .hero-sub{
+    color:var(--muted);font-size:clamp(1.02rem,1.7vw,1.28rem);font-weight:300;
+    max-width:620px;margin:34px auto 0;line-height:1.65;
+  }
+  .hero-actions{margin-top:46px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+  .hero-trust{margin-top:40px;display:flex;gap:14px;align-items:center;justify-content:center;color:var(--muted-2);font-size:.86rem;flex-wrap:wrap}
+  .hero-trust .stars{color:var(--gold);letter-spacing:2px}
+  .hero-trust .sep{width:4px;height:4px;border-radius:50%;background:var(--muted-2)}
+
+  .scroll-ind{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;
+    display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--muted-2);
+    font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
+  }
+  .scroll-mouse{width:24px;height:38px;border:1px solid var(--line);border-radius:14px;position:relative}
+  .scroll-mouse::after{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:3px;height:7px;border-radius:3px;background:var(--gold);animation:scrollDot 1.9s var(--ease) infinite}
+  @keyframes scrollDot{0%{opacity:0;transform:translate(-50%,0)}30%{opacity:1}70%{opacity:1}100%{opacity:0;transform:translate(-50%,12px)}}
+
+  /* ---------- SOCIAL PROOF BAR ---------- */
+  .proof{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:var(--bg-2);padding:30px 0}
+  .proof .wrap{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .proof-stat{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.92rem}
+  .proof-stat b{font-family:var(--serif);color:var(--text);font-size:1.4rem;font-weight:600}
+  .proof-stat .stars{color:var(--gold);letter-spacing:1px}
+  .proof-logos{display:flex;align-items:center;gap:34px;flex-wrap:wrap;opacity:.62}
+  .proof-logos span{font-family:var(--serif);font-size:1.15rem;letter-spacing:.04em;color:var(--muted);white-space:nowrap;font-weight:500}
+  .proof-divider{width:1px;height:34px;background:var(--line-soft);display:none}
+
+  /* ---------- PROCESS / HOW IT WORKS ---------- */
+  .process{background:var(--bg)}
+  .process-head{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:70px}
+  .steps{display:flex;flex-direction:column;gap:0}
+  .step{
+    display:grid;grid-template-columns:120px 1fr 1fr;gap:40px;align-items:center;
+    padding:46px 0;border-top:1px solid var(--line-soft);position:relative;
+  }
+  .step:last-child{border-bottom:1px solid var(--line-soft)}
+  .step-num{font-family:var(--serif);font-size:clamp(3rem,6vw,5rem);font-weight:500;color:transparent;-webkit-text-stroke:1px var(--gold-deep);line-height:1;transition:color .5s,-webkit-text-stroke .5s}
+  .step:hover .step-num{color:var(--gold);-webkit-text-stroke:1px var(--gold)}
+  .step-main h3{font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:6px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .step-main .tag{font-family:var(--sans);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:5px 11px;border-radius:2px;font-weight:500}
+  .step-desc{color:var(--muted);font-size:1.02rem;line-height:1.65}
+  .step-desc ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:9px}
+  .step-desc li{display:flex;gap:11px;align-items:flex-start;font-size:.95rem;color:var(--muted)}
+  .step-desc li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:8px;flex:none;box-shadow:0 0 8px rgba(201,162,75,.6)}
+
+  /* ---------- RESULTS / STAT COUNTERS ---------- */
+  .results{background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .results-head{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:64px}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .stat{text-align:center;padding:24px 22px;border-left:1px solid var(--line-soft)}
+  .stat:first-child{border-left:none}
+  .stat-num{font-family:var(--serif);font-size:clamp(3rem,6.5vw,5rem);font-weight:600;color:var(--gold);line-height:1;letter-spacing:-0.02em}
+  .stat-num .suffix{font-size:.5em;color:var(--gold-2)}
+  .stat-label{color:var(--muted);margin-top:14px;font-size:.95rem;letter-spacing:.01em}
+
+  /* ---------- TESTIMONIALS CAROUSEL ---------- */
+  .testi{background:var(--bg);overflow:hidden}
+  .testi-head{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:56px}
+  .carousel{position:relative;max-width:880px;margin:0 auto}
+  .carousel-track{position:relative;min-height:320px}
+  .quote{
+    position:absolute;inset:0;opacity:0;visibility:hidden;transform:translateY(24px);
+    transition:opacity .7s var(--ease),transform .7s var(--ease),visibility .7s;
+    text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  }
+  .quote.active{opacity:1;visibility:visible;transform:translateY(0)}
+  .quote .marks{font-family:var(--serif);font-size:5rem;line-height:.6;color:var(--gold-deep);opacity:.55;margin-bottom:18px}
+  .quote p{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.1rem);font-weight:400;line-height:1.4;color:var(--text);max-width:760px;font-style:italic}
+  .quote .who{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:4px}
+  .quote .who .avatar{width:54px;height:54px;border-radius:50%;background:var(--bg-3);border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);color:var(--gold);font-size:1.3rem;margin-bottom:12px}
+  .quote .who strong{font-family:var(--sans);font-weight:600;font-size:1rem}
+  .quote .who span{color:var(--muted);font-size:.88rem}
+  .quote .who .stars{color:var(--gold);letter-spacing:2px;margin-top:8px;font-size:.85rem}
+  .carousel-nav{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:46px}
+  .carousel-dots{display:flex;gap:10px}
+  .carousel-dots button{width:9px;height:9px;border-radius:50%;background:#2c2a25;border:none;cursor:pointer;transition:.3s;padding:0}
+  .carousel-dots button.active{background:var(--gold);width:28px;border-radius:6px}
+  .car-arrow{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer;display:grid;place-items:center;transition:.3s;font-size:1rem}
+  .car-arrow:hover{border-color:var(--gold);color:var(--gold);transform:scale(1.06)}
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--bg-2);border-top:1px solid var(--line-soft)}
+  .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .about-copy p{color:var(--muted);font-size:1.05rem;margin-top:20px;line-height:1.7}
+  .about-points{list-style:none;margin-top:32px;display:flex;flex-direction:column;gap:18px}
+  .about-points li{display:flex;gap:16px;align-items:flex-start}
+  .about-points .ic{width:40px;height:40px;border-radius:3px;flex:none;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold)}
+  .about-points h4{font-family:var(--sans);font-weight:600;font-size:1rem;margin-bottom:2px;color:var(--text)}
+  .about-points p{margin:0;font-size:.92rem;color:var(--muted)}
+  .about-visual{position:relative;aspect-ratio:4/5;border:1px solid var(--line);border-radius:4px;background:var(--bg-3);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:36px}
+  .about-visual .ring{position:absolute;border:1px solid var(--line);border-radius:50%}
+  .about-visual .ring.r1{width:240px;height:240px;top:-60px;right:-60px}
+  .about-visual .ring.r2{width:380px;height:380px;top:-120px;right:-120px;opacity:.5}
+  .about-visual .badge{font-family:var(--serif);color:var(--gold);font-size:1rem;letter-spacing:.2em;text-transform:uppercase}
+  .about-visual blockquote{font-family:var(--serif);font-size:1.7rem;line-height:1.3;margin-top:14px;font-style:italic;color:var(--text)}
+  .about-visual cite{display:block;margin-top:18px;color:var(--muted);font-style:normal;font-size:.9rem}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--bg)}
+  .faq-head{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:56px}
+  .faq-list{max-width:820px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--line-soft)}
+  .faq-q{width:100%;background:none;border:none;color:var(--text);text-align:left;cursor:pointer;
+    padding:28px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    font-family:var(--serif);font-size:clamp(1.15rem,2.2vw,1.5rem);font-weight:500;transition:color .3s}
+  .faq-q:hover{color:var(--gold)}
+  .faq-icon{flex:none;width:30px;height:30px;border:1px solid var(--line);border-radius:50%;position:relative;transition:.4s var(--ease)}
+  .faq-icon::before,.faq-icon::after{content:"";position:absolute;background:var(--gold);left:50%;top:50%;transition:.4s var(--ease)}
+  .faq-icon::before{width:11px;height:1.5px;transform:translate(-50%,-50%)}
+  .faq-icon::after{width:1.5px;height:11px;transform:translate(-50%,-50%)}
+  .faq-item.open .faq-icon{transform:rotate(135deg);border-color:var(--gold)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+  .faq-a-inner{padding:0 0 28px;color:var(--muted);font-size:1rem;line-height:1.7;max-width:90%}
+
+  /* ---------- PRICING ---------- */
+  .pricing{background:var(--bg-2);border-top:1px solid var(--line-soft)}
+  .pricing-head{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:64px}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+  .tier{
+    background:var(--panel);border:1px solid var(--line-soft);border-radius:6px;padding:42px 34px;
+    display:flex;flex-direction:column;position:relative;transition:transform .45s var(--ease),border-color .45s,box-shadow .45s;
+  }
+  .tier:hover{transform:translateY(-8px);border-color:var(--line);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .tier.featured{border-color:var(--gold);background:var(--bg-3);box-shadow:0 24px 70px rgba(201,162,75,.1)}
+  .tier.featured::before{content:"Most Popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--gold);color:#0a0a0b;font-family:var(--sans);font-weight:600;font-size:.68rem;letter-spacing:.18em;
+    text-transform:uppercase;padding:6px 16px;border-radius:2px;white-space:nowrap}
+  .tier-name{font-family:var(--serif);font-size:1.6rem;font-weight:600}
+  .tier-for{color:var(--muted);font-size:.9rem;margin-top:6px;min-height:42px}
+  .tier-price{margin:24px 0 6px;display:flex;align-items:baseline;gap:6px}
+  .tier-price .amt{font-family:var(--serif);font-size:3rem;font-weight:600;color:var(--text);line-height:1}
+  .tier-price .per{color:var(--muted);font-size:.9rem}
+  .tier .from{color:var(--muted-2);font-size:.82rem;margin-bottom:24px}
+  .tier ul{list-style:none;display:flex;flex-direction:column;gap:14px;margin:8px 0 30px;flex:1}
+  .tier li{display:flex;gap:12px;align-items:flex-start;font-size:.94rem;color:var(--muted)}
+  .tier li svg{flex:none;margin-top:3px;color:var(--gold)}
+  .tier .btn{width:100%}
+  .pay-terms{
+    text-align:center;margin-top:40px;color:var(--text);font-family:var(--serif);
+    font-size:clamp(1.05rem,2.2vw,1.45rem);font-style:italic;letter-spacing:.01em;
+  }
+  .pay-terms::before{content:"";display:block;width:42px;height:1px;background:var(--gold);margin:0 auto 22px}
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .wa-float{
+    position:fixed;right:24px;bottom:24px;z-index:120;
+    width:60px;height:60px;border-radius:50%;
+    background:var(--gold);color:#0a0a0b;
+    display:grid;place-items:center;
+    box-shadow:0 10px 30px rgba(201,162,75,.35);
+    transition:transform .35s var(--ease),box-shadow .4s var(--ease),background .35s;
+    animation:waPulse 2.6s var(--ease) infinite;
+  }
+  .wa-float:hover{transform:translateY(-3px) scale(1.05);background:var(--gold-2);box-shadow:0 16px 44px rgba(201,162,75,.5)}
+  .wa-float svg{width:32px;height:32px}
+  .wa-float .wa-label{
+    position:absolute;right:74px;top:50%;transform:translateY(-50%) translateX(8px);
+    background:var(--panel);color:var(--text);border:1px solid var(--line);
+    padding:9px 15px;border-radius:4px;font-family:var(--sans);font-size:.85rem;font-weight:500;
+    white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease);
+    box-shadow:0 8px 24px rgba(0,0,0,.4);
+  }
+  .wa-float:hover .wa-label{opacity:1;transform:translateY(-50%) translateX(0)}
+  @keyframes waPulse{0%{box-shadow:0 10px 30px rgba(201,162,75,.35),0 0 0 0 rgba(201,162,75,.5)}70%{box-shadow:0 10px 30px rgba(201,162,75,.35),0 0 0 16px rgba(201,162,75,0)}100%{box-shadow:0 10px 30px rgba(201,162,75,.35),0 0 0 0 rgba(201,162,75,0)}}
+  @media(max-width:520px){.wa-float{right:18px;bottom:18px;width:54px;height:54px}.wa-float .wa-label{display:none}}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{background:var(--bg);text-align:center;position:relative;overflow:hidden}
+  .final .glow{position:absolute;width:760px;height:760px;border-radius:50%;border:1px solid var(--line);top:50%;left:50%;transform:translate(-50%,-50%);opacity:.4}
+  .final .glow.two{width:1080px;height:1080px;opacity:.18}
+  .final .wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+  .final h2{font-size:clamp(2.3rem,6vw,4.4rem);max-width:16ch;margin:18px 0 0}
+  .final p{color:var(--muted);font-size:1.1rem;margin:24px auto 0;max-width:520px}
+  .final .actions{margin-top:44px;display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+  .final .reassure{margin-top:26px;color:var(--muted-2);font-size:.85rem;display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+  .final .reassure span{display:flex;align-items:center;gap:7px}
+  .final .reassure .dot{color:var(--gold)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--bg-2);border-top:1px solid var(--line-soft);padding:72px 0 36px}
+  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:54px;border-bottom:1px solid var(--line-soft)}
+  .foot-brand .logo{margin-bottom:18px}
+  .foot-brand p{color:var(--muted);font-size:.94rem;max-width:300px;line-height:1.65}
+  .foot-col h5{font-family:var(--sans);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:600}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+  .foot-col a{color:var(--muted);font-size:.92rem;transition:color .3s}
+  .foot-col a:hover{color:var(--gold)}
+  .foot-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:30px;gap:18px;flex-wrap:wrap}
+  .foot-bottom p{color:var(--muted-2);font-size:.84rem}
+  .foot-social{display:flex;gap:14px}
+  .foot-social a{width:38px;height:38px;border:1px solid var(--line-soft);border-radius:50%;display:grid;place-items:center;color:var(--muted);transition:.3s}
+  .foot-social a:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+
+  /* ---------- REVEAL ANIMATIONS (base state) ---------- */
+  .reveal{opacity:0;transform:translateY(34px)}
+  .reveal-stagger > *{opacity:0;transform:translateY(28px)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:980px){
+    .about .wrap{grid-template-columns:1fr;gap:48px}
+    .about-visual{aspect-ratio:16/10}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(3){border-left:none}
+    .stat{border-top:1px solid var(--line-soft);padding-top:34px}
+    .stat:nth-child(1),.stat:nth-child(2){border-top:none}
+    .tiers{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+    .tier.featured{transform:scale(1)}
+    .foot-top{grid-template-columns:1fr 1fr;gap:34px}
+  }
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .nav-links.open{
+      display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+      background:rgba(10,10,11,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft);padding:10px 0;
+    }
+    .nav-links.open li{width:100%}
+    .nav-links.open a{display:block;padding:16px 28px;border-bottom:1px solid var(--line-soft)}
+    .nav-links.open a::after{display:none}
+    .burger{display:flex}
+    .nav-cta .btn-book-nav{display:none}
+    .step{grid-template-columns:64px 1fr;gap:20px 22px}
+    .step-main{grid-column:2}
+    .step-desc{grid-column:1 / -1}
+    .step-num{font-size:2.6rem}
+    .proof .wrap{flex-direction:column;gap:22px;text-align:center}
+    .proof-logos{justify-content:center}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-bottom{flex-direction:column;text-align:center}
+  }
+  @media(max-width:520px){
+    .wrap{padding:0 20px}
+    .stats-grid{grid-template-columns:1fr}
+    .stat{border-left:none;border-top:1px solid var(--line-soft)}
+    .stat:first-child{border-top:none}
+    .foot-top{grid-template-columns:1fr}
+    .hero-actions .btn,.final .actions .btn{width:100%}
+  }
+
+  /* Reduced motion */
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    .reveal,.reveal-stagger > *{opacity:1 !important;transform:none !important}
+    .scroll-mouse::after{display:none}
+  }
+
+  /* ---------- LENIS SMOOTH SCROLL (luxury, half-speed glide) ---------- */
+  html.lenis,html.lenis body{height:auto}
+  .lenis.lenis-smooth{scroll-behavior:auto !important}
+  .lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+  .lenis.lenis-stopped{overflow:hidden}
+  .lenis.lenis-smooth iframe{pointer-events:none}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Lumora home">
+      <span class="mark" aria-hidden="true"></span>
+      <span>Lum<b>o</b>ra</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#process">Process</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://calendly.com/lumora-website/30min" target="_blank" rel="noopener" class="btn btn-gold btn-book-nav">Book a Free Strategy Call <span class="arrow">→</span></a>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <div class="hero-orb three"></div>
+    <div class="hero-orb two"></div>
+    <div class="hero-orb"></div>
+  </div>
+  <div class="wrap">
+    <span class="eyebrow hero-eyebrow">Premium Websites · UK Landscaping Businesses</span>
+    <h1 id="heroHeadline">
+      <span class="line"><span>We Build Websites</span></span>
+      <span class="line"><span>For Landscapers That Turn</span></span>
+      <span class="line"><span>Visitors Into <span class="gold italic">Booked Jobs.</span></span></span>
+    </h1>
+    <p class="hero-sub" id="heroSub">
+      Lumora builds and runs the complete growth engine for landscaping businesses:
+      stunning websites, lead capture, automation and SEO — all under one roof.
+    </p>
+    <div class="hero-actions" id="heroActions">
+      <a href="https://calendly.com/lumora-website/30min" target="_blank" rel="noopener" class="btn btn-gold btn-lg">Book a Free Strategy Call <span class="arrow">→</span></a>
+      <a href="#process" class="btn btn-ghost btn-lg">See How It Works</a>
+    </div>
+    <div class="hero-trust" id="heroTrust">
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <span>Rated 5.0 by UK landscapers</span>
+      <span class="sep" aria-hidden="true"></span>
+      <span>40+ projects delivered</span>
+      <span class="sep" aria-hidden="true"></span>
+      <span>No long-term lock-in</span>
+    </div>
+  </div>
+  <a href="#process" class="scroll-ind" aria-label="Scroll to content">
+    <span class="scroll-mouse" aria-hidden="true"></span>
+    Scroll
+  </a>
+</section>
+
+<!-- ============ SOCIAL PROOF BAR ============ -->
+<section class="proof" aria-label="Social proof">
+  <div class="wrap">
+    <div class="proof-stat">
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <span><b>5.0</b> from 40+ reviews</span>
+    </div>
+    <div class="proof-logos">
+      <span>Verde Landscapes</span>
+      <span>Oakridge Gardens</span>
+      <span>GreenScape Co.</span>
+      <span>Hedgerow &amp; Stone</span>
+      <span>Meadowcraft Grounds</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS / HOW IT WORKS ============ -->
+<section class="process section-pad" id="process">
+  <div class="wrap">
+    <div class="process-head reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="section-title">One system. Six moves.<br>Compounding growth.</h2>
+      <p class="section-intro">Every Lumora engagement follows the same proven path — each step built,
+      managed and optimised by us so you can stay focused on running your business.</p>
+    </div>
+
+    <div class="steps">
+      <article class="step" data-step>
+        <div class="step-num">01</div>
+        <div class="step-main">
+          <h3>Design <span class="tag">Web Design</span></h3>
+        </div>
+        <div class="step-desc">
+          A bespoke, high-end website engineered to convert visitors into enquiries — fast,
+          mobile-perfect and unmistakably premium.
+          <ul>
+            <li>Custom design that reflects your brand's true value</li>
+            <li>Sub-second load times &amp; flawless mobile experience</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step" data-step>
+        <div class="step-num">02</div>
+        <div class="step-main">
+          <h3>Capture <span class="tag">Lead Capture</span></h3>
+        </div>
+        <div class="step-desc">
+          Smart forms, call tracking and instant-response widgets that turn casual browsers
+          into booked appointments — nothing slips through.
+          <ul>
+            <li>Conversion-optimised forms &amp; booking flows</li>
+            <li>Instant lead alerts to your phone &amp; inbox</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step" data-step>
+        <div class="step-num">03</div>
+        <div class="step-main">
+          <h3>Manage <span class="tag">Mobile App</span></h3>
+        </div>
+        <div class="step-desc">
+          Run your entire business from your pocket. We build and manage a branded mobile
+          dashboard so leads, bookings and reviews live in one place.
+          <ul>
+            <li>Branded app to manage leads &amp; bookings on the go</li>
+            <li>Fully managed updates — you never lift a finger</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step" data-step>
+        <div class="step-num">04</div>
+        <div class="step-main">
+          <h3>Rank <span class="tag">SEO</span></h3>
+        </div>
+        <div class="step-desc">
+          Get found by ready-to-buy customers in your area. We dominate local search so the
+          right people reach you first.
+          <ul>
+            <li>Local SEO &amp; Google Business optimisation</li>
+            <li>Content &amp; technical SEO that climbs and stays</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step" data-step>
+        <div class="step-num">05</div>
+        <div class="step-main">
+          <h3>Nurture <span class="tag">Automation</span></h3>
+        </div>
+        <div class="step-desc">
+          Automated follow-ups, reminders and review requests that keep every lead warm and
+          every customer coming back — on autopilot.
+          <ul>
+            <li>Email &amp; SMS sequences that close on their own</li>
+            <li>Automatic review requests to grow your reputation</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step" data-step>
+        <div class="step-num">06</div>
+        <div class="step-main">
+          <h3>Scale <span class="tag">Growth</span></h3>
+        </div>
+        <div class="step-desc">
+          Monthly reporting, refinement and strategy. As the data comes in, we tune the whole
+          system so your results keep compounding.
+          <ul>
+            <li>Transparent monthly performance reporting</li>
+            <li>Ongoing optimisation &amp; a dedicated strategist</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULTS / STAT COUNTERS ============ -->
+<section class="results section-pad" id="results">
+  <div class="wrap">
+    <div class="results-head reveal">
+      <span class="eyebrow">Real Results</span>
+      <h2 class="section-title">Numbers our clients<br>actually feel.</h2>
+      <p class="section-intro">Across web, search and automation, here's the impact Lumora systems
+      deliver for UK landscaping businesses.</p>
+    </div>
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat">
+        <div class="stat-num"><span class="counter" data-target="312">0</span><span class="suffix">%</span></div>
+        <div class="stat-label">Average increase in enquiries</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span class="counter" data-target="40">0</span><span class="suffix">+</span></div>
+        <div class="stat-label">Businesses transformed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span class="counter" data-target="2.1" data-decimals="1">0</span><span class="suffix">s</span></div>
+        <div class="stat-label">Average site load time</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span class="counter" data-target="98">0</span><span class="suffix">%</span></div>
+        <div class="stat-label">Client retention rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS CAROUSEL ============ -->
+<section class="testi section-pad" id="testimonials">
+  <div class="wrap">
+    <div class="testi-head reveal">
+      <span class="eyebrow">Client Words</span>
+      <h2 class="section-title">Trusted by owners who<br>don't settle for average.</h2>
+    </div>
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+        <figure class="quote active" data-slide="0">
+          <div class="marks" aria-hidden="true">&ldquo;</div>
+          <p>Within three months of Lumora rebuilding our site and adding their lead system,
+          we went from a handful of enquiries a week to a fully booked schedule of jobs. It paid for itself almost instantly.</p>
+          <figcaption class="who">
+            <span class="avatar" aria-hidden="true">SH</span>
+            <strong>Sarah Hughes</strong>
+            <span>Owner · Verde Landscapes</span>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+          </figcaption>
+        </figure>
+
+        <figure class="quote" data-slide="1">
+          <div class="marks" aria-hidden="true">&ldquo;</div>
+          <p>The automation alone changed everything. Follow-ups, reminders, reviews — all handled.
+          We look ten times bigger than we are, and the leads simply don't go cold anymore.</p>
+          <figcaption class="who">
+            <span class="avatar" aria-hidden="true">JC</span>
+            <strong>James Carter</strong>
+            <span>Director · Oakridge Gardens</span>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+          </figcaption>
+        </figure>
+
+        <figure class="quote" data-slide="2">
+          <div class="marks" aria-hidden="true">&ldquo;</div>
+          <p>We now rank top of Google for every landscaping search that matters locally, and I run the whole
+          thing from the app on my phone. Lumora feels less like an agency and more like a partner.</p>
+          <figcaption class="who">
+            <span class="avatar" aria-hidden="true">EM</span>
+            <strong>Elena Moretti</strong>
+            <span>Founder · GreenScape Co.</span>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="carousel-nav">
+        <button class="car-arrow" id="prevSlide" aria-label="Previous testimonial">←</button>
+        <div class="carousel-dots" id="dots" role="tablist" aria-label="Testimonials">
+          <button class="active" data-dot="0" aria-label="Testimonial 1"></button>
+          <button data-dot="1" aria-label="Testimonial 2"></button>
+          <button data-dot="2" aria-label="Testimonial 3"></button>
+        </div>
+        <button class="car-arrow" id="nextSlide" aria-label="Next testimonial">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about section-pad" id="about">
+  <div class="wrap">
+    <div class="about-copy reveal">
+      <span class="eyebrow">About Lumora</span>
+      <h2 class="section-title">A growth partner, not<br>just another agency.</h2>
+      <p>Lumora was founded on a simple belief: brilliant landscaping businesses deserve the same
+      calibre of marketing as national brands — without the bloated retainers or the jargon.</p>
+      <p>We bring web design, lead capture, automation and SEO together
+      into one seamless system, managed end-to-end by a small, senior team that genuinely cares
+      about your numbers.</p>
+      <ul class="about-points">
+        <li>
+          <span class="ic" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2-6.3-4.6-6.3 4.6L8 13.8 2 9.4h7.6z"/></svg>
+          </span>
+          <div><h4>Senior-only delivery</h4><p>No juniors learning on your account — you work directly with specialists.</p></div>
+        </li>
+        <li>
+          <span class="ic" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <div><h4>One system, fully managed</h4><p>Everything connected and handled for you — no juggling five suppliers.</p></div>
+        </li>
+        <li>
+          <span class="ic" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg>
+          </span>
+          <div><h4>Obsessed with ROI</h4><p>We measure success by your enquiries and revenue — not vanity metrics.</p></div>
+        </li>
+      </ul>
+    </div>
+    <div class="about-visual reveal" aria-hidden="true">
+      <div class="ring r2"></div>
+      <div class="ring r1"></div>
+      <div class="badge">Est. — Built for UK Landscapers</div>
+      <blockquote>"We treat your business like it's our own."</blockquote>
+      <cite>— The Lumora Team</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq section-pad" id="faq">
+  <div class="wrap">
+    <div class="faq-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">Questions, answered.</h2>
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What exactly does Lumora do?<span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">We build and run your entire online growth system — premium web design, lead capture,
+        automation and SEO — so your landscaping business gets more booked jobs without managing multiple suppliers.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How quickly will I see results?<span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Most clients see a noticeable lift in enquiries within the first 30–90 days as the new
+        site, capture tools and automations go live. SEO compounds further over 3–6 months.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I have to commit to a long contract?<span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">No. We work on flexible monthly terms with no long-term lock-in. We earn your business
+        every month by delivering results — not by trapping you in paperwork.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you only work with landscapers?<span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes — we specialise in UK landscaping businesses: garden design, grounds maintenance, hard
+        landscaping, lawn care and tree surgery. Because we focus on one trade, we know exactly what wins you booked jobs.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What does it cost?<span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Plans start from £1,000 setup + £97/month and scale with what you need. You pay 50% upfront
+        to begin and the remaining 50% only when you're happy with the results. On your free strategy call we'll recommend the right tier — no pressure, no obligation.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What happens on the free strategy call?<span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">A 30-minute, no-pressure conversation. We'll review your current setup, identify where
+        you're losing leads, and map out exactly how Lumora would grow your business — whether you work with us or not.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing section-pad" id="pricing">
+  <div class="wrap">
+    <div class="pricing-head reveal">
+      <span class="eyebrow">Pricing</span>
+      <h2 class="section-title">Investment that pays<br>for itself.</h2>
+      <p class="section-intro">Transparent setup + monthly pricing. No surprises, no jargon —
+      just a system built to win you more booked jobs.</p>
+    </div>
+    <div class="tiers">
+      <article class="tier reveal">
+        <h3 class="tier-name">Starter</h3>
+        <p class="tier-for">A premium website that gets your landscaping business found and booked.</p>
+        <div class="tier-price"><span class="amt">£97</span><span class="per">/month</span></div>
+        <p class="from">+ £1,000 one-time setup</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> 3-page website</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> On-page SEO optimisation</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Lead capture forms &amp; chat widget</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Mobile-friendly website design</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Mobile app management</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> 1 website edit per month</li>
+        </ul>
+        <a href="https://calendly.com/lumora-website/30min" target="_blank" rel="noopener" class="btn btn-ghost">Book a Free Strategy Call</a>
+      </article>
+
+      <article class="tier featured reveal">
+        <h3 class="tier-name">Standard</h3>
+        <p class="tier-for">The complete system for landscapers serious about more booked jobs.</p>
+        <div class="tier-price"><span class="amt">£197</span><span class="per">/month</span></div>
+        <p class="from">+ £1,200 one-time setup</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> 5-page website</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Everything in Starter, plus:</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Appointment booking system</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Payment processing</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Automated Google reviews</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> 3 website edits per month</li>
+        </ul>
+        <a href="https://calendly.com/lumora-website/30min" target="_blank" rel="noopener" class="btn btn-gold">Book a Free Strategy Call <span class="arrow">→</span></a>
+      </article>
+
+      <article class="tier reveal">
+        <h3 class="tier-name">Premium</h3>
+        <p class="tier-for">A fully managed, AI-powered growth engine for established landscapers.</p>
+        <div class="tier-price"><span class="amt">£297</span><span class="per">/month</span></div>
+        <p class="from">+ £1,350 one-time setup</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> 10+ page website</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Everything in Standard, plus:</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> AI voice agent</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> AI chatbot</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Local SEO &amp; Google Business</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Email &amp; SMS automation</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> 5 website edits per month</li>
+        </ul>
+        <a href="https://calendly.com/lumora-website/30min" target="_blank" rel="noopener" class="btn btn-ghost">Book a Free Strategy Call</a>
+      </article>
+    </div>
+    <p class="pay-terms reveal">50% upfront to begin. 50% only when you're happy with the results.</p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final section-pad" id="book">
+  <div class="glow two" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow reveal">Let's Talk</span>
+    <h2 class="reveal">Ready to turn your website<br>into your best salesperson?</h2>
+    <p class="reveal">Book a free, no-obligation strategy call. In 30 minutes we'll show you exactly
+    where you're losing leads — and how to fix it.</p>
+    <div class="actions reveal">
+      <a href="https://calendly.com/lumora-website/30min" target="_blank" rel="noopener" class="btn btn-gold btn-lg">Book a Free Strategy Call <span class="arrow">→</span></a>
+      <a href="#process" class="btn btn-ghost btn-lg">Explore the Process</a>
+    </div>
+    <div class="reassure reveal">
+      <span><span class="dot" aria-hidden="true">✓</span> 30-minute call</span>
+      <span><span class="dot" aria-hidden="true">✓</span> No pressure, no obligation</span>
+      <span><span class="dot" aria-hidden="true">✓</span> Actionable advice you keep</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="logo"><span class="mark" aria-hidden="true"></span><span>Lum<b>o</b>ra</span></a>
+        <p>Premium websites, lead capture, automation and SEO for
+        ambitious UK landscaping businesses.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#process">Web Design</a></li>
+          <li><a href="#process">Lead Capture</a></li>
+          <li><a href="#process">Automation</a></li>
+          <li><a href="#process">SEO</a></li>
+          <li><a href="#process">App Management</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="mailto:lumora.website@gmail.com">lumora.website@gmail.com</a></li>
+          <li><a href="https://calendly.com/lumora-website/30min" target="_blank" rel="noopener">Book a Strategy Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span id="year">2026</span> Lumora. All rights reserved. Built for UK landscaping businesses.</p>
+      <div class="foot-social">
+        <a href="#" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9h3V6h-3a3 3 0 00-3 3v2H8v3h3v6h3v-6h3l1-3h-4V9z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP ============ -->
+<a class="wa-float"
+   href="https://wa.me/447306059643?text=Hi%20Lumora%2C%20I%27m%20interested%20in%20a%20website%20for%20my%20landscaping%20business"
+   target="_blank" rel="noopener" aria-label="Chat with Lumora on WhatsApp">
+  <span class="wa-label">Chat on WhatsApp</span>
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.13h-.01a8.2 8.2 0 01-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 01-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 012.41 5.82c0 4.54-3.69 8.24-8.23 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/>
+  </svg>
+</a>
+
+<!-- ============ GSAP ============ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- Lenis smooth scroll (luxury, half-speed) -->
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var year = document.getElementById("year"); if(year) year.textContent = new Date().getFullYear();
+
+  /* ---- NAV scroll state ---- */
+  var nav = document.getElementById("nav");
+  function onScroll(){ if(window.scrollY > 30) nav.classList.add("scrolled"); else nav.classList.remove("scrolled"); }
+  onScroll(); window.addEventListener("scroll", onScroll, {passive:true});
+
+  /* ---- Mobile menu ---- */
+  var burger = document.getElementById("burger");
+  var navLinks = document.getElementById("navLinks");
+  burger.addEventListener("click", function(){
+    var open = navLinks.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true":"false");
+  });
+  navLinks.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){ navLinks.classList.remove("open"); burger.setAttribute("aria-expanded","false"); }
+  });
+
+  /* ---- FAQ accordion ---- */
+  document.querySelectorAll(".faq-item").forEach(function(item){
+    var btn = item.querySelector(".faq-q");
+    var ans = item.querySelector(".faq-a");
+    btn.addEventListener("click", function(){
+      var isOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(function(o){
+        if(o!==item){ o.classList.remove("open"); o.querySelector(".faq-a").style.maxHeight=null; o.querySelector(".faq-q").setAttribute("aria-expanded","false"); }
+      });
+      if(isOpen){ item.classList.remove("open"); ans.style.maxHeight=null; btn.setAttribute("aria-expanded","false"); }
+      else { item.classList.add("open"); ans.style.maxHeight = ans.scrollHeight + "px"; btn.setAttribute("aria-expanded","true"); }
+    });
+  });
+
+  /* ---- Testimonials carousel ---- */
+  (function(){
+    var slides = Array.prototype.slice.call(document.querySelectorAll(".quote"));
+    var dots = Array.prototype.slice.call(document.querySelectorAll("#dots button"));
+    var cur = 0, timer = null;
+    function go(i){
+      cur = (i + slides.length) % slides.length;
+      slides.forEach(function(s,n){ s.classList.toggle("active", n===cur); });
+      dots.forEach(function(d,n){ d.classList.toggle("active", n===cur); });
+    }
+    function next(){ go(cur+1); }
+    function start(){ if(!reduce){ stop(); timer = setInterval(next, 6000); } }
+    function stop(){ if(timer) clearInterval(timer); }
+    document.getElementById("nextSlide").addEventListener("click", function(){ next(); start(); });
+    document.getElementById("prevSlide").addEventListener("click", function(){ go(cur-1); start(); });
+    dots.forEach(function(d){ d.addEventListener("click", function(){ go(parseInt(d.dataset.dot,10)); start(); }); });
+    var car = document.getElementById("carousel");
+    car.addEventListener("mouseenter", stop); car.addEventListener("mouseleave", start);
+    start();
+  })();
+
+  /* ---- Reduced motion: show everything, skip GSAP ---- */
+  if(reduce || typeof gsap === "undefined"){
+    document.querySelectorAll(".reveal, .reveal-stagger > *").forEach(function(el){ el.style.opacity=1; el.style.transform="none"; });
+    document.querySelectorAll(".counter").forEach(function(c){
+      var dec = parseInt(c.dataset.decimals||"0",10);
+      c.textContent = parseFloat(c.dataset.target).toFixed(dec);
+    });
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---- Lenis smooth scroll: exactly half scroll speed + luxury glide ---- */
+  var lenis = null;
+  if(typeof Lenis !== "undefined"){
+    lenis = new Lenis({
+      duration: 1.6,                 // long, premium deceleration
+      easing: function(t){ return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+      wheelMultiplier: 0.5,          // exactly half the native scroll speed (desktop)
+      smoothWheel: true,
+      touchMultiplier: 1             // keep mobile touch 1:1 / natural
+    });
+    /* Keep ScrollTrigger in sync with Lenis */
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(function(time){ lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+
+    /* Smooth, slow anchor-link navigation through Lenis */
+    document.querySelectorAll('a[href^="#"]').forEach(function(link){
+      link.addEventListener("click", function(e){
+        var id = link.getAttribute("href");
+        if(!id || id === "#") return;
+        var target = document.querySelector(id);
+        if(!target) return;
+        e.preventDefault();
+        lenis.scrollTo(target, { offset:0, duration:1.8 });
+      });
+    });
+  }
+
+  /* ---- Hero intro timeline ---- */
+  var heroLines = document.querySelectorAll("#heroHeadline .line > span");
+  var tl = gsap.timeline({ defaults:{ ease:"power3.out" }, delay:0.15 });
+  tl.from(".hero-eyebrow", { y:20, opacity:0, duration:1.05 })
+    .from(heroLines, { yPercent:115, opacity:0, duration:1.5, stagger:0.12 }, "-=0.45")
+    .from("#heroSub", { y:24, opacity:0, duration:1.2 }, "-=0.75")
+    .from("#heroActions", { y:24, opacity:0, duration:1.2 }, "-=0.825")
+    .from("#heroTrust", { y:20, opacity:0, duration:1.05 }, "-=0.9")
+    .from(".scroll-ind", { opacity:0, duration:1.2 }, "-=0.6")
+    .from(".hero-orb", { scale:0.85, opacity:0, duration:2.4, stagger:0.12 }, 0);
+
+  /* ---- Generic reveals ---- */
+  gsap.utils.toArray(".reveal").forEach(function(el){
+    gsap.to(el, {
+      y:0, opacity:1, duration:1.5, ease:"power2.out",
+      scrollTrigger:{ trigger:el, start:"top 86%" }
+    });
+  });
+
+  /* ---- Process steps: staggered scroll reveal ---- */
+  gsap.utils.toArray(".step").forEach(function(step){
+    var num = step.querySelector(".step-num");
+    var main = step.querySelector(".step-main");
+    var desc = step.querySelector(".step-desc");
+    var t = gsap.timeline({ scrollTrigger:{ trigger:step, start:"top 82%" }});
+    t.from(num,  { x:-40, opacity:0, duration:1.2, ease:"power2.out" })
+     .from(main, { y:30, opacity:0, duration:1.05, ease:"power2.out" }, "-=0.75")
+     .from(desc, { y:30, opacity:0, duration:1.05, ease:"power2.out" }, "-=0.825");
+  });
+
+  /* ---- Pricing tiers stagger ---- */
+  ScrollTrigger.batch(".tier", {
+    start:"top 85%",
+    onEnter: function(els){ gsap.to(els, { y:0, opacity:1, duration:1.35, stagger:0.12, ease:"power2.out" }); }
+  });
+
+  /* ---- Stat counters ---- */
+  document.querySelectorAll(".counter").forEach(function(c){
+    var target = parseFloat(c.dataset.target);
+    var dec = parseInt(c.dataset.decimals||"0",10);
+    var obj = { val:0 };
+    ScrollTrigger.create({
+      trigger:c, start:"top 88%", once:true,
+      onEnter:function(){
+        gsap.to(obj, { val:target, duration:3, ease:"power2.out",
+          onUpdate:function(){ c.textContent = obj.val.toFixed(dec); }
+        });
+      }
+    });
+  });
+
+  /* ---- Subtle hero parallax ---- */
+  gsap.to(".hero-grid", {
+    yPercent:14, ease:"none",
+    scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom top", scrub:true }
+  });
+})();
+</script>
+</body>
+</html>
