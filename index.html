@@ -343,7 +343,7 @@
   .foot-social a:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
 
   /* ---------- REVEAL ANIMATIONS (base state) ---------- */
-  .reveal{opacity:0;transform:translateY(34px)}
+  .reveal{opacity:1;transform:translateY(0)}
   .reveal-stagger > *{opacity:0;transform:translateY(28px)}
 
   /* ---------- RESPONSIVE ---------- */
@@ -990,7 +990,7 @@
     var obj = { val:0 };
     ScrollTrigger.create({
       trigger:c, start:"top 88%", once:true,
-      onEnter:function(){
+     onEnter:function(){
         gsap.to(obj, { val:target, duration:3, ease:"power2.out",
           onUpdate:function(){ c.textContent = obj.val.toFixed(dec); }
         });
